@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-image: url('img.png');
+    background-size: auto;
+    background-position: center;
+    position: relative;
+}
+
+.main-container {
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.quiz-container {
+
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button, .game-button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    display: block;
+    margin: 10px auto;
+    width: 75%;
+}
+
+button:hover, .game-button:hover {
+    background-color: #005f73;
+}
+
+.hidden {
+    display: none;
+}
+#home-button {
+    background-color: #008CBA;
+    color: white;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+#home-button:hover {
+    background-color: #005f73;
+    transform: scale(1.1);
+}
+.video-container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+video {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.content-container {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+h1, h2 {
+    color: #4CAF50;
+}
+
+ul {
+    text-align: right;
+    max-width: 600px;
+    margin: auto;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
