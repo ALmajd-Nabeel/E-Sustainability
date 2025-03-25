@@ -90,7 +90,6 @@ const questions = [
         ]
     }
 ];
-
 let currentQuestionIndex = 0;
 let score = 0;
 
@@ -100,6 +99,7 @@ const nextButton = document.getElementById("next-button");
 const scoreDisplay = document.getElementById("score");
 const scoreValue = document.getElementById("score-value");
 const homeButton = document.getElementById("home-button");
+const iconContainer = document.getElementById("icon-container"); // مكان عرض العلامات
 
 function startGame() {
     currentQuestionIndex = 0;
@@ -107,11 +107,13 @@ function startGame() {
     nextButton.classList.add("hidden");
     homeButton.classList.add("hidden");
     scoreDisplay.classList.add("hidden");
+    iconContainer.innerHTML = ''; // مسح العلامات السابقة
     showQuestion();
 }
 
 function showQuestion() {
     resetState();
+    iconContainer.innerHTML = ''; // مسح العلامات السابقة عند الانتقال للسؤال الجديد
     let currentQuestion = questions[currentQuestionIndex];
     questionElement.innerText = currentQuestion.question;
 
@@ -131,14 +133,37 @@ function resetState() {
 function selectAnswer(correct) {
     if (correct) {
         score++;
+        showIcon("correct");
+    } else {
+        showIcon("incorrect");
     }
+
     Array.from(answerButtons.children).forEach(button => {
         button.disabled = true;
     });
+
     nextButton.classList.remove("hidden");
 }
 
+function showIcon(type) {
+    const icon = document.createElement("span");
+    icon.classList.add("icon");
+
+    if (type === "correct") {
+        icon.classList.add("correct");
+        icon.innerHTML = "✔";  // علامة صح
+    } else if (type === "incorrect") {
+        icon.classList.add("incorrect");
+        icon.innerHTML = "❌";  // علامة إكس
+    }
+
+    iconContainer.appendChild(icon);
+}
+
 nextButton.addEventListener("click", () => {
+    // إخفاء العلامة عند الانتقال للسؤال التالي
+    iconContainer.innerHTML = '';  // إخفاء العلامات عند الضغط على "التالي"
+    
     currentQuestionIndex++;
     if (currentQuestionIndex < questions.length) {
         showQuestion();
@@ -170,5 +195,5 @@ function showScore() {
     homeButton.classList.remove("hidden");
 }
 
-
 startGame();
+

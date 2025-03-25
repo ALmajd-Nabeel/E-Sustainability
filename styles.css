@@ -10,7 +10,27 @@ body {
     position: relative;
 }
 
+#icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.icon {
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
 .main-container {
+    width: 90%;
     margin: auto;
     background: white;
     padding: 20px;
@@ -20,7 +40,7 @@ body {
 }
 
 .quiz-container {
-
+    width: 90%;
     margin: auto;
     background: white;
     padding: 20px;
@@ -71,7 +91,7 @@ button:hover, .game-button:hover {
     transform: scale(1.1);
 }
 .video-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     padding: 30px;
     background: white;
@@ -85,7 +105,7 @@ video {
     margin-top: 20px;
 }
 .content-container {
-    width: 80%;
+    width: 90%;
     margin: auto;
     padding: 30px;
     background: white;
@@ -102,6 +122,7 @@ ul {
     text-align: right;
     max-width: 600px;
     margin: auto;
+    direction: rtl;
 }
 
 ul li {
